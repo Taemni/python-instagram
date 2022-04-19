@@ -10,9 +10,6 @@ headers = {
 
 
 def download(url, filename=None):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"}
-    if "instagram" in url:
-        headers.update({"referer": "https://www.instagram.com/"})
     if not filename:
         filename = url.split("/")[-1].split("?")[0]
     with open(filename, "wb") as file:
