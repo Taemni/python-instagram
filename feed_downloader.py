@@ -70,7 +70,7 @@ def main(username):
 
     print(input("[!] Press any key to continue."))
 
-    for i in range(0, len(feeds)):
+    for i in range(len(feeds)):
         feed = feeds[i]["node"]
         feed_url = f"https://www.instagram.com/p/{feed['shortcode']}"
         feed_text = feed["edge_media_to_caption"]["edges"][0]["node"]["text"] if feed["edge_media_to_caption"]["edges"] else ""
@@ -139,8 +139,6 @@ if __name__ == "__main__":
     if "/p/" in username or "/tv/" in username or "/reel/" in username:
         mainone(username)
     else:
-        if not username:
-            username = "rachel_mypark"
         main(username)
 
     print("[*] Writing Done.")
